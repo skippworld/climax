@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>클라이맥스 크루 · CLMX CREW — 원주 비보이팀</title>
+<meta name="description" content="2008년 강원도 원주에서 시작한 비보이팀 클라이맥스 크루. 무대 공연, 페스티벌 게스트쇼, 배틀 출전, 워크숍을 진행합니다. 공연 문의를 받습니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="클라이맥스 크루 · CLMX CREW">
+<meta property="og:description" content="2008년 원주에서 시작한 비보이팀. 공연 문의를 받습니다.">
+<meta name="theme-color" content="#0A0710">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PerformingGroup",
+  "name": "클라이맥스 크루",
+  "alternateName": ["CLIMAX CREW", "CLMX CREW"],
+  "foundingDate": "2008",
+  "foundingLocation": { "@type": "Place", "name": "강원특별자치도 원주시" },
+  "genre": "브레이킹",
+  "email": "climaxcrew08@gmail.com",
+  "telephone": "+82-10-4432-6127",
+  "award": [
+    "2018 원주 다이내믹댄싱카니발 스페셜일반부문 최우수상 (강원도지사상)",
+    "2018 원주 윈터댄싱카니발 금상",
+    "2014 충주 관아골 스트릿댄스 경연대회 대상",
+    "2014 대만 8 tempo battle vol.1 우승",
+    "2012 Hi Seoul Festival B-BOY BATTLE 우승"
+  ]
+}
+</script>
+
+<style>
+:root{
+  --ink:#0A0710;
+  --ink-2:#150E20;
+  --line:#2A1E3A;
+  --paper:#F3EFF7;
+  --mute:#9A8FAA;
+  --purple:#7B2CF5;
+  --purple-lt:#A46BFF;
+  --orange:#FF6A1A;
+  --grad:linear-gradient(100deg,var(--purple) 0%,#B23BD6 48%,var(--orange) 100%);
+  --serif:'Archivo',system-ui,sans-serif;
+  --kr:'Pretendard Variable',Pretendard,system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--ink);color:var(--paper);
+  font-family:var(--kr);font-size:16px;line-height:1.75;
+  word-break:keep-all;overflow-wrap:break-word;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:9;pointer-events:none;opacity:.28;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+
+.wrap{width:min(1180px,90vw);margin:0 auto}
+.disp{font-family:var(--serif);font-weight:800;font-stretch:118%;letter-spacing:-.03em;line-height:.88;text-transform:uppercase}
+
+/* ---------- INTRO ---------- */
+#intro{
+  position:fixed;inset:0;z-index:100;background:var(--ink);
+  display:grid;place-items:center;
+}
+#intro .mark{
+  position:relative;will-change:transform,filter,opacity;
+  font-family:var(--serif);font-weight:900;font-stretch:125%;
+  font-size:clamp(3rem,13vw,11rem);letter-spacing:-.045em;line-height:.82;
+  text-align:center;
+  transform:rotate(-9deg) scale(.86);
+}
+#intro .mark span{
+  display:block;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+}
+/* 매트한 본체: 채도를 낮춘 보라→주황, 윗면이 살짝 어두워 두께가 느껴지게 */
+#intro .mark .base{
+  background-image:
+    linear-gradient(178deg,rgba(0,0,0,.32) 0%,rgba(0,0,0,0) 46%),
+    linear-gradient(102deg,#6A2ACB 0%,#9438B4 46%,#D4571C 100%);
+}
+/* 표면을 한 번 스치는 빛 */
+#intro .mark .shine{
+  position:absolute;top:0;left:0;right:0;
+  background-image:linear-gradient(104deg,transparent 42%,rgba(255,236,214,.45) 50%,transparent 58%);
+  background-size:320% 100%;background-position:180% 0;background-repeat:no-repeat;
+  animation:sweep 3.4s linear 1s forwards;
+}
+#intro .sub{
+  text-align:center;margin-top:1.1rem;font-size:.78rem;letter-spacing:.42em;
+  color:var(--mute);text-indent:.42em;
+}
+#intro .mark{animation:markIn 5.8s linear forwards}
+#intro .sub{opacity:0;animation:subIn 4.6s cubic-bezier(.3,.05,.3,1) .5s forwards}
+#intro{animation:introOut 1.8s ease 4.5s forwards}
+#page{position:relative;opacity:0;animation:pageIn 2.4s cubic-bezier(.25,.6,.2,1) 4.2s forwards}
+@keyframes markIn{
+  0%{transform:rotate(-9deg) scale(.86);opacity:0;filter:blur(18px)}
+  20%{transform:rotate(-7.2deg) scale(.94);opacity:1;filter:blur(2px)}
+  48%{transform:rotate(-4.7deg) scale(1.05);opacity:1;filter:blur(0)}
+  70%{transform:rotate(-2.6deg) scale(1.16);opacity:.95;filter:blur(2px)}
+  86%{transform:rotate(-1deg) scale(1.28);opacity:.62;filter:blur(8px)}
+  100%{transform:rotate(0deg) scale(1.44);opacity:0;filter:blur(16px)}
+}
+@keyframes sweep{
+  0%{background-position:180% 0;opacity:0}
+  14%{opacity:1}
+  86%{opacity:1}
+  100%{background-position:-140% 0;opacity:0}
+}
+@keyframes subIn{
+  0%{opacity:0;letter-spacing:.95em}
+  18%{opacity:.85}
+  52%{opacity:.85;letter-spacing:.42em}
+  70%{opacity:.85;letter-spacing:.42em}
+  100%{opacity:0;letter-spacing:1.25em}
+}
+@keyframes introOut{to{opacity:0;visibility:hidden}}
+@keyframes pageIn{from{opacity:0;transform:scale(1.04);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
+#skip{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  background:none;border:1px solid var(--line);color:var(--mute);
+  padding:.5rem 1.1rem;border-radius:99px;font:inherit;font-size:.8rem;cursor:pointer;
+}
+#skip:hover{color:var(--paper);border-color:var(--purple-lt)}
+
+/* ---------- NAV ---------- */
+header{position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);
+  background:rgba(10,7,16,.72);border-bottom:1px solid rgba(42,30,58,.7)}
+header .wrap{position:relative;display:flex;align-items:center;justify-content:space-between;height:66px;gap:1rem}
+
+.logo{flex:0 1 auto;font-family:var(--serif);font-weight:900;font-stretch:125%;font-size:1.15rem;letter-spacing:-.02em;text-decoration:none}
+.logo b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav{display:flex;gap:1.5rem;font-size:.84rem;letter-spacing:.02em}
+nav a{text-decoration:none;color:var(--mute);padding:.2rem 0;border-bottom:1px solid transparent}
+nav a:hover{color:var(--paper);border-color:var(--orange)}
+#navtoggle{display:none;width:40px;height:40px;min-width:40px;flex:0 0 40px;
+  align-items:center;justify-content:center;flex-direction:column;gap:5px;
+  background:none;border:1px solid var(--line);border-radius:8px;cursor:pointer;
+  padding:0;margin:0;line-height:0;box-sizing:border-box}
+#navtoggle i{display:block;width:17px;height:1.5px;background:var(--paper);flex:none;
+  transition:transform .25s,opacity .2s}
+#navtoggle[aria-expanded="true"] i:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+#navtoggle[aria-expanded="true"] i:nth-child(2){opacity:0}
+#navtoggle[aria-expanded="true"] i:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+@media(max-width:980px){
+  #navtoggle{display:flex}
+  nav{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;gap:0;
+    background:rgba(10,7,16,.97);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);padding:.4rem 0;font-size:.95rem}
+  nav.open{display:flex}
+  nav a{padding:.95rem 5vw;border-bottom:1px solid rgba(42,30,58,.55);color:var(--paper)}
+  nav a:last-child{border-bottom:0}
+}
+
+/* ---------- HERO ---------- */
+#hero{position:relative;padding:clamp(4rem,11vw,9rem) 0 clamp(3rem,7vw,6rem);overflow:hidden}
+#hero::after{
+  content:"";position:absolute;width:60vw;height:60vw;right:-22vw;top:-18vw;border-radius:50%;
+  background:radial-gradient(circle,rgba(123,44,245,.42),transparent 62%);filter:blur(20px);pointer-events:none
+}
+#hero h1{margin:0;font-size:clamp(3.4rem,15.5vw,13rem)}
+#hero h1 span{display:block}
+#hero h1 .a{color:var(--paper)}
+#hero h1 .b{
+  /* 화면에 보이는 폭(전체의 1/3)이 처음과 끝에서 동일하도록 3주기를 반복시킨다 */
+  background-image:linear-gradient(100deg,
+    #7B2CF5 0%,#B23BD6 8.3%,#FF6A1A 16.7%,#B23BD6 25%,
+    #7B2CF5 33.3%,#B23BD6 41.7%,#FF6A1A 50%,#B23BD6 58.3%,
+    #7B2CF5 66.7%,#B23BD6 75%,#FF6A1A 83.3%,#B23BD6 91.7%,#7B2CF5 100%);
+  background-size:300% 100%;background-position:0% 50%;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  animation:flow 5.5s linear infinite;
+}
+@keyframes flow{from{background-position:0% 50%}to{background-position:100% 50%}}
+#hero .wrap{text-align:center}
+#hero h1{text-align:center}
+.hero-meta{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:.7rem 2rem;margin-top:2.2rem;
+  padding-top:1.4rem;border-top:1px solid var(--line);position:relative
+}
+.hero-meta p{margin:0;font-size:.92rem;color:var(--mute)}
+.hero-meta strong{color:var(--paper);font-weight:600}
+.hero-lede{max-width:60ch;margin:2.4rem auto 0;font-size:clamp(1rem,2.2vw,1.2rem);line-height:1.95;position:relative;color:#DDD5E8}
+
+/* ---------- SECTION ---------- */
+section{padding:clamp(4.5rem,10vw,8rem) 0;position:relative}
+.wrap{position:relative;z-index:1}
+
+/* ---- 페이지 전체를 덮는 배경 조명. 크고 작은 빛이 흩어져 떠다닌다 ---- */
+#aura{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+#aura i{position:absolute;display:block;border-radius:50%;will-change:transform,opacity}
+@keyframes drift{
+  0%  {transform:translate(0,0) scale(.86);opacity:.5}
+  30% {transform:translate(3%,-4%) scale(1.14);opacity:1}
+  62% {transform:translate(-4%,3%) scale(.95);opacity:.7}
+  100%{transform:translate(0,0) scale(.86);opacity:.5}
+}
+#aura .o1{width:70vw;height:70vw;left:-26vw;top:3%;filter:blur(60px);
+  background:radial-gradient(circle,rgba(123,44,245,.26),transparent 66%);animation:drift 31s ease-in-out infinite}
+#aura .o2{width:24vw;height:24vw;right:5vw;top:9%;filter:blur(28px);
+  background:radial-gradient(circle,rgba(255,106,26,.30),transparent 64%);animation:drift 17s ease-in-out infinite 2s}
+#aura .o3{width:11vw;height:11vw;left:24%;top:17%;filter:blur(18px);
+  background:radial-gradient(circle,rgba(255,106,26,.36),transparent 62%);animation:drift 12s ease-in-out infinite 5s}
+#aura .o4{width:46vw;height:46vw;right:-16vw;top:23%;filter:blur(46px);
+  background:radial-gradient(circle,rgba(178,59,214,.26),transparent 66%);animation:drift 25s ease-in-out infinite 1s}
+#aura .o5{width:8vw;height:8vw;left:9%;top:31%;filter:blur(14px);
+  background:radial-gradient(circle,rgba(164,107,255,.42),transparent 60%);animation:drift 10s ease-in-out infinite 3s}
+#aura .o6{width:92vw;height:64vw;left:50%;margin-left:-46vw;top:38%;filter:blur(70px);
+  background:radial-gradient(ellipse,rgba(255,106,26,.15),transparent 68%);animation:drift 36s ease-in-out infinite}
+#aura .o7{width:18vw;height:18vw;right:26%;top:45%;filter:blur(24px);
+  background:radial-gradient(circle,rgba(123,44,245,.34),transparent 62%);animation:drift 15s ease-in-out infinite 6s}
+#aura .o8{width:32vw;height:32vw;left:-9vw;top:53%;filter:blur(38px);
+  background:radial-gradient(circle,rgba(255,106,26,.22),transparent 66%);animation:drift 21s ease-in-out infinite 2.5s}
+#aura .o9{width:9vw;height:9vw;right:11%;top:61%;filter:blur(15px);
+  background:radial-gradient(circle,rgba(255,140,60,.38),transparent 60%);animation:drift 11s ease-in-out infinite 1s}
+#aura .o10{width:54vw;height:54vw;left:28%;top:67%;filter:blur(56px);
+  background:radial-gradient(circle,rgba(123,44,245,.24),transparent 68%);animation:drift 29s ease-in-out infinite 4s}
+#aura .o11{width:15vw;height:15vw;left:-3vw;bottom:16%;filter:blur(22px);
+  background:radial-gradient(circle,rgba(255,106,26,.30),transparent 62%);animation:drift 16s ease-in-out infinite}
+#aura .o12{width:13vw;height:13vw;left:46%;bottom:9%;filter:blur(20px);
+  background:radial-gradient(circle,rgba(178,59,214,.34),transparent 62%);animation:drift 14s ease-in-out infinite 3.5s}
+#aura .o13{width:42vw;height:42vw;right:-14vw;bottom:-4%;filter:blur(44px);
+  background:radial-gradient(circle,rgba(123,44,245,.28),transparent 66%);animation:drift 24s ease-in-out infinite 3s}
+.shead{display:flex;align-items:baseline;gap:1rem;margin-bottom:2.6rem;
+  padding-bottom:1rem;border-bottom:1px solid var(--line)}
+.shead h2{margin:0;font-size:clamp(1.7rem,4.4vw,2.9rem);font-weight:800;letter-spacing:-.035em}
+.shead em{font-family:var(--serif);font-style:normal;font-weight:700;font-stretch:110%;
+  font-size:.8rem;letter-spacing:.2em;color:var(--purple-lt);margin-left:auto;white-space:nowrap}
+
+/* ABOUT */
+.teamphoto{
+  position:relative;aspect-ratio:16/9;margin:0 0 clamp(2rem,4vw,3.2rem);
+  border:1px solid var(--line);overflow:hidden;
+  background:linear-gradient(135deg,#1B0F2B,#2A1233 55%,#3A1A18);
+}
+.teamphoto img{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+.teamphoto .ph{position:absolute;inset:0;display:grid;place-items:center;
+  color:var(--mute);font-size:.85rem;letter-spacing:.06em;text-align:center;padding:1rem;font-family:var(--serif)}
+.about{display:block}
+.about p{margin:0 0 1.6rem;max-width:64ch;color:#D9D1E4;font-size:.98rem;line-height:1.9}
+.about p.first{font-size:1.16rem;color:var(--paper);line-height:1.75;margin-bottom:1.9rem}
+
+
+/* VIDEO */
+.spec{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-bottom:clamp(2rem,4vw,3rem)}
+.spec div{background:var(--ink);padding:1.2rem 1.4rem}
+.spec dt{font-size:.78rem;color:var(--mute);letter-spacing:.1em;margin-bottom:.4rem}
+.spec dd{margin:0;font-size:1.02rem;font-weight:600}
+.spec dd small{display:block;font-weight:400;font-size:.85rem;color:var(--mute);margin-top:.2rem}
+@media(max-width:720px){.spec{grid-template-columns:1fr}}
+
+.progs{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.progs article{border:1px solid var(--line);padding:1.4rem;position:relative;overflow:hidden;
+  min-height:260px;display:flex;flex-direction:column;justify-content:flex-end;
+  background:linear-gradient(165deg,rgba(123,44,245,.12),transparent 70%)}
+.progs article:nth-child(even){background:linear-gradient(165deg,rgba(255,106,26,.12),transparent 70%)}
+.progs .bgv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  z-index:0;opacity:.5;filter:saturate(.85)}
+.progs article::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(to top,rgba(10,7,16,.94) 8%,rgba(10,7,16,.6) 48%,rgba(10,7,16,.25) 100%)}
+.progs h3,.progs p,.progs .no{position:relative;z-index:2}
+.progs h3{margin:0 0 .5rem;font-family:var(--serif);font-weight:800;font-stretch:110%;
+  font-size:1.02rem;letter-spacing:-.01em}
+.progs p{margin:0;font-size:.9rem;color:#D6CDE2;line-height:1.65}
+.progs .no{position:absolute;top:1rem;right:1.1rem;font-family:var(--serif);font-weight:800;
+  font-size:.8rem;color:var(--purple-lt);opacity:.8}
+@media(max-width:900px){.progs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.progs{grid-template-columns:1fr}}
+
+.vmain{position:relative;aspect-ratio:16/9;border:1px solid var(--line);overflow:hidden;cursor:pointer;
+  background-image:url("https://img.youtube.com/vi/BCDfgPp97n4/maxresdefault.jpg"),linear-gradient(135deg,#1B0F2B,#2A1233 60%,#3A1A18);
+  background-size:cover;background-position:center}
+.vmain .play{background:rgba(10,7,16,.42)}
+.vmain iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vmain .play{position:absolute;inset:0;display:grid;place-items:center;gap:.9rem;align-content:center}
+.vmain .play i{width:76px;height:76px;border-radius:50%;background:var(--grad);display:grid;place-items:center}
+.vmain .play i::after{content:"";border-left:20px solid #fff;border-top:12px solid transparent;
+  border-bottom:12px solid transparent;margin-left:5px}
+.vmain .play span{font-size:.9rem;color:#E7DEF2}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.vgrid .vt{position:relative;aspect-ratio:16/9;border:1px solid var(--line);cursor:pointer;
+  overflow:hidden;background-size:cover;background-position:center;
+  background-image:linear-gradient(160deg,#170E24,#241234)}
+.vgrid .vt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vgrid .vt > i{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:48px;height:48px;border-radius:50%;background:var(--grad);display:grid;place-items:center;
+  transition:transform .25s}
+.vgrid .vt > i::after{content:"";border-left:13px solid #fff;border-top:8px solid transparent;
+  border-bottom:8px solid transparent;margin-left:3px}
+.vgrid .vt:hover{border-color:var(--purple-lt)}
+.vgrid .vt:hover > i{transform:translate(-50%,-50%) scale(1.12)}
+.vgrid a:hover{border-color:var(--purple-lt)}
+@media(max-width:720px){.vgrid{grid-template-columns:1fr 1fr;gap:.7rem}}
+
+/* AWARDS timeline */
+.tl{position:relative;padding-left:1.9rem;margin:0}
+.tl::before{content:"";position:absolute;left:5px;top:.5rem;bottom:.5rem;width:2px;background:var(--line)}
+.tl .fill{position:absolute;left:5px;top:.5rem;width:2px;height:0;background:var(--grad);transition:height .5s linear}
+.tl li{list-style:none;position:relative;padding:0 0 1.5rem}
+.tl li::before{content:"";position:absolute;left:-1.9rem;top:.42rem;width:12px;height:12px;
+  border-radius:50%;background:var(--ink);border:2px solid var(--purple)}
+.tl li.win::before{background:var(--orange);border-color:var(--orange)}
+.tl .yr{font-family:var(--serif);font-weight:800;font-stretch:110%;font-size:1.1rem;
+  color:var(--orange);letter-spacing:-.02em;margin-bottom:.35rem;line-height:1}
+.tl .item{position:relative;padding-left:.8rem}
+.tl .item::before{content:"";position:absolute;left:0;top:.6em;width:4px;height:4px;
+  border-radius:50%;background:var(--purple-lt)}
+.tl .item.w::before{background:var(--orange)}
+.tl .item + .item{margin-top:.6rem;padding-top:.6rem;border-top:1px solid rgba(42,30,58,.85)}
+.tl h3{margin:0 0 .1rem;font-size:.93rem;font-weight:600;line-height:1.5}
+.tl p{margin:0;color:var(--mute);font-size:.8rem;line-height:1.55}
+
+/* PERFORMANCES */
+.reccols{display:grid;grid-template-columns:.86fr 1.14fr;gap:clamp(2rem,4.5vw,4rem);align-items:stretch}
+.reccol{display:flex;flex-direction:column}
+/* 접힌 상태에서는 수상 목록이 늘어나 두 열의 끝이 정확히 맞는다 */
+#record .tl{flex:1;display:flex;flex-direction:column;justify-content:space-between}
+#record.open .tl{justify-content:flex-start}
+#record .tl li:last-child{padding-bottom:0}
+.reccol .note{margin-top:1rem}
+.morewrap{margin-top:auto;padding-top:1.4rem}
+.colhead{display:flex;align-items:baseline;gap:.7rem;margin:0 0 1.6rem;
+  font-size:1.12rem;font-weight:700;letter-spacing:-.02em}
+.colhead span{font-family:var(--serif);font-weight:700;font-stretch:108%;
+  font-size:.7rem;letter-spacing:.18em;color:var(--purple-lt)}
+@media(max-width:900px){.reccols{grid-template-columns:1fr;gap:3.5rem}}
+
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.6rem}
+.filters button{background:transparent;border:1px solid var(--line);color:var(--mute);
+  padding:.42rem 1rem;border-radius:99px;font:inherit;font-size:.86rem;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--grad);border-color:transparent;color:#fff;font-weight:600}
+.plist{border-top:1px solid var(--line)}
+.plist .row{display:grid;grid-template-columns:3.6rem 1fr;gap:.2rem .9rem;align-items:baseline;
+  padding:.72rem .2rem;border-bottom:1px solid rgba(42,30,58,.7)}
+.plist .row:hover{background:rgba(123,44,245,.07)}
+.plist .yr{font-family:var(--serif);font-weight:700;font-stretch:110%;color:var(--purple-lt);font-size:.92rem}
+.plist .ttl{font-weight:500;font-size:.93rem;line-height:1.5}
+.plist .kind{grid-column:2;color:var(--mute);font-size:.74rem;text-align:left;letter-spacing:.02em}
+.plist .row.big .ttl::after{content:"대표";display:inline-block;margin-left:.5rem;font-size:.64rem;
+  font-weight:700;color:var(--orange);border:1px solid var(--orange);border-radius:3px;padding:0 .3rem;vertical-align:1px}
+.morewrap{display:flex;justify-content:center}
+.plist .row.off,.morewrap.off{display:none}
+.morewrap button{background:transparent;border:1px solid var(--line);color:var(--paper);
+  padding:.6rem 1.6rem;border-radius:99px;font:inherit;font-size:.86rem;cursor:pointer}
+.morewrap button:hover{border-color:var(--purple-lt);color:var(--purple-lt)}
+
+
+/* CONTACT */
+#contact{background:var(--ink-2);border-top:1px solid var(--line)}
+.cgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,4rem)}
+.ccard{border:1px solid var(--line);padding:1.4rem}
+.ccard + .ccard{margin-top:1rem}
+.ccard span{font-size:.78rem;color:var(--mute);letter-spacing:.1em}
+.ccard a,.ccard p{display:block;margin:.3rem 0 0;font-size:1.22rem;font-weight:600;
+  text-decoration:none;font-family:var(--serif);font-stretch:105%;letter-spacing:-.01em}
+.ccard a:hover{color:var(--orange)}
+form{display:grid;gap:.9rem}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+label{display:block;font-size:.8rem;color:var(--mute);margin-bottom:.35rem}
+input,select,textarea{width:100%;background:var(--ink);border:1px solid var(--line);color:var(--paper);
+  padding:.72rem .85rem;font:inherit;font-size:.95rem;border-radius:2px}
+input:focus,select:focus,textarea:focus{border-color:var(--purple-lt);outline:none}
+textarea{min-height:110px;resize:vertical}
+button.send{background:var(--grad);border:0;color:#fff;font:inherit;font-weight:700;
+  padding:.95rem;border-radius:2px;cursor:pointer;font-size:1rem}
+.note{font-size:.82rem;color:var(--mute);margin:0}
+@media(max-width:820px){.cgrid,.f2{grid-template-columns:1fr}}
+
+footer{padding:2.4rem 0;border-top:1px solid var(--line);font-size:.85rem;color:var(--mute)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:.6rem 2rem;justify-content:space-between}
+
+/* ================= 전체 가운데 정렬 ================= */
+.shead{flex-direction:column;align-items:center;gap:.5rem;text-align:center}
+.shead em{margin-left:0}
+.about{text-align:center}
+.about p{margin-left:auto;margin-right:auto}
+
+/* 공연 구성 */
+.spec{text-align:center}
+.progs article{align-items:center;text-align:center}
+.progs .no{position:static;margin-bottom:.5rem;display:block}
+
+/* 문의 */
+.cgrid{text-align:center}
+.ccard span{display:block}
+form{text-align:center}
+label{text-align:center}
+.note{text-align:center}
+
+/* 푸터 */
+footer .wrap{justify-content:center;text-align:center}
+/* reveal */
+.rv{opacity:0;transform:translateY(22px)}
+.rv.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+@media(prefers-reduced-motion:reduce){
+  #intro,#intro .mark,#intro .shine,#page{animation:none!important}
+  #aura i,#hero h1 .b{animation:none!important}
+  #intro{display:none}
+  #page{opacity:1}
+  .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div id="intro" role="presentation">
+  <div id="introstage">
+    <div class="mark">
+      <span class="base">CLIMAX<br>CREW</span>
+      <span class="shine" aria-hidden="true">CLIMAX<br>CREW</span>
+    </div>
+    <div class="sub">WONJU CITY · SINCE 2008</div>
+  </div>
+  <button id="skip" type="button">인트로 건너뛰기</button>
+</div>
+
+<div id="page">
+<div id="aura" aria-hidden="true"><i class="o1"></i><i class="o2"></i><i class="o3"></i><i class="o4"></i><i class="o5"></i><i class="o6"></i><i class="o7"></i><i class="o8"></i><i class="o9"></i><i class="o10"></i><i class="o11"></i><i class="o12"></i><i class="o13"></i></div>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#hero">CLIMAX <b>CREW</b></a>
+    <nav id="nav">
+      <a href="#about">About</a>
+      <a href="#program">Show</a>
+      <a href="#video">Showcase</a>
+      <a href="#record">Award + Performance</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="navtoggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav">
+      <i></i><i></i><i></i>
+    </button>
+  </div>
+</header>
+
+<main>
+<section id="hero">
+  <div class="wrap">
+    <h1 class="disp"><span class="a">CLIMAX</span><span class="b">CREW</span></h1>
+    <div class="hero-meta">
+      <p>대한민국 강원특별자치도 <strong>원주</strong></p>
+      <p>창단 <strong>2008</strong></p>
+      <p>브레이킹(비보이) · 비트박스 · 퍼포먼스 · 워크숍</p>
+    </div>
+    <p class="hero-lede">강원도 원주를 대표하는 비보이팀 클라이맥스 크루입니다.<br>축제 게스트쇼부터 시상식 축하공연까지,<br>행사의 온도를 가장 높은 곳까지 끌어올립니다.</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="shead rv"><h2>팀 소개</h2><em>ABOUT</em></div>
+    <!-- 팀 프로필 사진 · image/profile.jpg (16:9, 1920x1080 권장) -->
+    <figure class="teamphoto rv">
+      <img src="image/profile.jpg" alt="클라이맥스 크루 팀 프로필" loading="lazy"
+           onerror="this.remove()">
+      <div class="ph">image/profile.jpg</div>
+    </figure>
+    <div class="about">
+      <div class="rv">
+        <p class="first">클라이맥스 크루는 2008년 강원도 원주에서 만들어진 비보이 댄스팀입니다.<br>10년 넘게 다져온 팀워크가 가장 큰 자산입니다.</p>
+        <p>평창 문화올림픽 개막행사와 메달플라자, 평창 바이애슬론 월드컵,<br>장애인올림픽 국가대표 개시식 같은 큰 무대부터<br>지역 축제와 거리 공연까지 서 왔습니다.<br><br>화려한 아크로바틱으로 시선을 모으고,<br>행사 주제에 맞춰 구성을 새로 짜는 방식으로 공연합니다.</p>
+        <p>공연만 하지 않습니다.<br>원주스트릿댄스페스티벌 RUN WONJU, 원주 다이내믹비보이챔피온쉽,<br>횡성한우축제 비보이배틀대회를 직접 주최·주관했고,<br>중·고등학교 특기적성 강사로도 오래 활동했습니다.<br><br>무대에 서는 쪽과 판을 만드는 쪽을 모두 아는 팀입니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="program">
+  <div class="wrap">
+    <div class="shead rv"><h2>공연 구성</h2><em>SHOW</em></div>
+    <dl class="spec rv">
+      <div><dt>런닝타임</dt><dd>기본 10분 내외<small>프로그램 구성에 따라 60분까지 협의 가능</small></dd></div>
+      <div><dt>참여 인원</dt><dd>공연자 8명<small>행사 규모에 맞춰 조정</small></dd></div>
+      <div><dt>공연 장소</dt><dd>실내 · 야외 · 공연장 · 거리공연<small>무대 조건에 맞춰 구성 변경</small></dd></div>
+      <div><dt>관객 타겟</dt><dd>남녀노소 누구나<small>비보이를 기반으로 하는 스트릿댄스 공연</small></dd></div>
+    </dl>
+    <div class="progs">
+      <article class="rv"><video class="bgv" src="video/show1.mp4" muted loop playsinline preload="none" aria-hidden="true" onerror="this.remove()"></video><span class="no">01</span><h3>SHOW CLIMAX</h3>
+        <p>클라이맥스 크루의 대표 퍼포먼스. 비보이 퍼포먼스의 정석적인 구성으로 팀의 색을 가장 진하게 보여주는 무대입니다.</p></article>
+      <article class="rv"><video class="bgv" src="video/show2.mp4" muted loop playsinline preload="none" aria-hidden="true" onerror="this.remove()"></video><span class="no">02</span><h3>FREE STYLE</h3>
+        <p>댄서 개개인의 개성을 그대로 드러내는 프리스타일 쇼. 즉흥의 긴장감이 관객에게 그대로 전달됩니다.</p></article>
+      <article class="rv"><video class="bgv" src="video/show3.mp4" muted loop playsinline preload="none" aria-hidden="true" onerror="this.remove()"></video><span class="no">03</span><h3>기획 공연</h3>
+        <p>행사 주제에 맞는 퍼포먼스를 새로 준비합니다. 행사 성격과 기획 의도에 맞춰 프로그램 전체를 구성합니다.</p></article>
+      <article class="rv"><video class="bgv" src="video/show4.mp4" muted loop playsinline preload="none" aria-hidden="true" onerror="this.remove()"></video><span class="no">04</span><h3>퓨전 국악</h3>
+        <p>한국 전통 음악에 맞춘 컨셉 공연. 전통 행사나 외빈 초청 무대에 어울리는 구성입니다.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="video">
+  <div class="wrap">
+    <div class="shead rv"><h2>공연 영상</h2><em>SHOWCASE</em></div>
+    <div class="vmain rv" data-yt="BCDfgPp97n4" role="button" tabindex="0" aria-label="대표 공연 영상 재생">
+      <div class="play"><i></i><span>대표 공연 영상</span></div>
+    </div>
+    <div class="vgrid">
+      <div class="vt rv" data-yt="WurlyhQHOpQ" role="button" tabindex="0" aria-label="공연 영상 재생"><i></i></div>
+      <div class="vt rv" data-yt="6wG0-jNPk3g" role="button" tabindex="0" aria-label="공연 영상 재생"><i></i></div>
+      <div class="vt rv" data-yt="6nU_VphqGa0" role="button" tabindex="0" aria-label="공연 영상 재생"><i></i></div>
+    </div>
+  </div>
+</section>
+
+<section id="record">
+  <div class="wrap">
+    <div class="shead rv"><h2>수상 · 공연 이력</h2><em>AWARD + PERFORMANCE</em></div>
+    <div class="reccols">
+      <div class="reccol">
+        <h3 class="colhead rv">수상 이력 <span>AWARDS</span></h3>
+        <ul class="tl" id="tl">
+        <div class="fill" id="tlfill"></div>
+        <li class="rv">
+        <div class="yr">2020</div>
+        <div class="item">
+        <h3>한국문화예술위원회 신나는 예술여행 선정</h3>
+        <p>전국 단위 문화예술 지원 사업</p>
+        </div>
+        </li>
+        <li class="rv">
+        <div class="yr">2019</div>
+        <div class="item">
+        <h3>강원문화재단 문화예술반상회 선정</h3>
+        <p>지역 문화예술 사업</p>
+        </div>
+        </li>
+        <li class="win rv">
+        <div class="yr">2018</div>
+        <div class="item w">
+        <h3>원주 다이내믹댄싱카니발 스페셜일반부문 최우수상</h3>
+        <p>1위 · 강원도지사상 수상</p>
+        </div>
+        <div class="item w">
+        <h3>원주 윈터댄싱카니발 금상</h3>
+        </div>
+        <div class="item">
+        <h3>청춘마이크 강원권 선정</h3>
+        <p>문화체육관광부 거리공연 사업</p>
+        </div>
+        </li>
+        <li class="rv">
+        <div class="yr">2017</div>
+        <div class="item">
+        <h3>B on Top 3:3 비보이배틀 준우승</h3>
+        </div>
+        </li>
+        <li class="win rv">
+        <div class="yr">2016</div>
+        <div class="item w">
+        <h3>원주 골목카니발 경연 대상</h3>
+        </div>
+        <div class="item">
+        <h3>원주 다이내믹댄싱카니발 스페셜부문 은상</h3>
+        </div>
+        </li>
+        <li class="win rv">
+        <div class="yr">2014</div>
+        <div class="item w">
+        <h3>충주 관아골 스트릿댄스 경연대회 대상</h3>
+        </div>
+        <div class="item w">
+        <h3>대만 8 tempo battle vol.1 우승</h3>
+        <p>해외 배틀 우승</p>
+        </div>
+        </li>
+        <li class="win rv">
+        <div class="yr">2012</div>
+        <div class="item w">
+        <h3>Hi Seoul Festival B-BOY BATTLE 우승</h3>
+        <p>서울시 주최 국제 페스티벌 배틀 부문</p>
+        </div>
+        <div class="item">
+        <h3>기네스 월드 레코드 참여</h3>
+        <p>메세나폴리스 주관</p>
+        </div>
+        </li>
+        <li class="rv">
+        <div class="yr">2010</div>
+        <div class="item">
+        <h3>월드레저 챔피온쉽 배틀 강원도 대표팀 초청</h3>
+        </div>
+        </li>
+        <li class="win rv">
+        <div class="yr">2009</div>
+        <div class="item w">
+        <h3>철원 레포츠축제 배틀부문 우승</h3>
+        <p>퍼포먼스부문 준우승</p>
+        </div>
+        <div class="item">
+        <h3>INSIDE FOOR 배틀대회 4강</h3>
+        </div>
+        </li>
+        <li class="rv">
+        <div class="yr">2008</div>
+        <div class="item">
+        <h3>망상 전국 비보이 배틀대회 4강</h3>
+        </div>
+        </li>
+        <li class="win rv">
+        <div class="yr">그 외</div>
+        <div class="item w">
+        <h3>제10회 원주 장미축제 퍼포먼스 경연대회 대상</h3>
+        </div>
+        </li>
+        </ul>
+      </div>
+      <div class="reccol">
+        <h3 class="colhead rv">공연 이력 <span>PERFORMANCES</span></h3>
+        <div class="filters" id="filters">
+        <button type="button" data-a="0" data-b="9999" aria-pressed="true">전체</button>
+        <button type="button" data-a="2019" data-b="9999" aria-pressed="false">2019~</button>
+        <button type="button" data-a="2015" data-b="2018" aria-pressed="false">2015–2018</button>
+        <button type="button" data-a="2011" data-b="2014" aria-pressed="false">2011–2014</button>
+        <button type="button" data-a="2008" data-b="2010" aria-pressed="false">2008–2010</button>
+        <div class="plist" id="plist">
+        <div class="row big" data-y="2026"><div class="yr">2026</div><div class="ttl">웅진 프리드라이프 시상식 축하공연</div><div class="kind">시상식</div></div>
+        <div class="row big" data-y="2025"><div class="yr">2025</div><div class="ttl">동대문페스티벌 브레이킹박스 공연</div><div class="kind">페스티벌</div></div>
+        <div class="row big" data-y="2025"><div class="yr">2025</div><div class="ttl">댄싱노원 거리페스티벌 축하공연</div><div class="kind">거리 축제</div></div>
+        <div class="row big" data-y="2024"><div class="yr">2024</div><div class="ttl">서리풀 아동청소년 축제 게스트쇼</div><div class="kind">게스트쇼</div></div>
+        <div class="row big" data-y="2018"><div class="yr">2018</div><div class="ttl">평창동계올림픽 메달플라자 초청공연</div><div class="kind">국제 행사</div></div>
+        <div class="row big" data-y="2018"><div class="yr">2018</div><div class="ttl">평창 문화올림픽 개막행사 초청공연</div><div class="kind">개막 행사</div></div>
+        <div class="row big" data-y="2018"><div class="yr">2018</div><div class="ttl">평창 동계패럴림픽 공연</div><div class="kind">국제 행사</div></div>
+        <div class="row" data-y="2017"><div class="yr">2017</div><div class="ttl">평창동계올림픽 성공기원 와락페스티벌 초청공연</div><div class="kind">페스티벌</div></div>
+        <div class="row" data-y="2017"><div class="yr">2017</div><div class="ttl">아트프리마켓페스티벌 시즌2 초청공연</div><div class="kind">페스티벌</div></div>
+        <div class="row big" data-y="2016"><div class="yr">2016</div><div class="ttl">장애인올림픽 국가대표 개시식 초청공연</div><div class="kind">국가 행사</div></div>
+        <div class="row" data-y="2016"><div class="yr">2016</div><div class="ttl">평창동계패럴림픽데이 초청공연</div><div class="kind">국제 행사</div></div>
+        <div class="row" data-y="2016"><div class="yr">2016</div><div class="ttl">글로벌이노베이터페스타 강원 초청공연</div><div class="kind">페스티벌</div></div>
+        <div class="row" data-y="2016"><div class="yr">2016</div><div class="ttl">원주고3축제 3GO TIME 초청공연</div><div class="kind">학교 행사</div></div>
+        <div class="row" data-y="2016"><div class="yr">2016</div><div class="ttl">원주문화재단 화통하게 초청공연</div><div class="kind">문화 행사</div></div>
+        <div class="row big" data-y="2015"><div class="yr">2015</div><div class="ttl">원주 다이내믹댄싱카니발 개막식 오프닝 공연</div><div class="kind">개막 공연</div></div>
+        <div class="row" data-y="2015"><div class="yr">2015</div><div class="ttl">코 아트 페스티벌 초청공연</div><div class="kind">페스티벌</div></div>
+        <div class="row" data-y="2014"><div class="yr">2014</div><div class="ttl">횡성 한우축제 배틀대회 주관 및 초청공연</div><div class="kind">주관·공연</div></div>
+        <div class="row" data-y="2014"><div class="yr">2014</div><div class="ttl">태백 쿨시네마 페스티벌 초청공연</div><div class="kind">페스티벌</div></div>
+        <div class="row big" data-y="2013"><div class="yr">2013</div><div class="ttl">평창 동계 스페셜올림픽 성화봉송 초청공연</div><div class="kind">국제 행사</div></div>
+        <div class="row" data-y="2013"><div class="yr">2013</div><div class="ttl">충주·태백 청소년가요제 초청공연</div><div class="kind">지역 행사</div></div>
+        <div class="row" data-y="2011"><div class="yr">2011</div><div class="ttl">아시아 스키알리미 초청공연</div><div class="kind">국제 행사</div></div>
+        <div class="row" data-y="2011"><div class="yr">2011</div><div class="ttl">쌍방울 패션쇼 초청공연</div><div class="kind">브랜드 행사</div></div>
+        <div class="row" data-y="2010"><div class="yr">2010</div><div class="ttl">컬투와 함께하는 모여라 2010 초청공연</div><div class="kind">방송·행사</div></div>
+        <div class="row" data-y="2010"><div class="yr">2010</div><div class="ttl">M-net 팝걸 콘테스트 1회 초청공연</div><div class="kind">방송</div></div>
+        <div class="row" data-y="2009"><div class="yr">2009</div><div class="ttl">청계광장 파이팅 대한민국 응원페스티벌 초청공연</div><div class="kind">페스티벌</div></div>
+        <div class="row" data-y="2009"><div class="yr">2009</div><div class="ttl">정동진 해돋이·해맞이 행사 초청공연</div><div class="kind">지역 행사</div></div>
+        <div class="row big" data-y="2008"><div class="yr">2008</div><div class="ttl">평창 바이애슬론 월드컵 초청공연</div><div class="kind">국제 행사</div></div>
+        <div class="row" data-y="2008"><div class="yr">2008</div><div class="ttl">썸머락 페스티벌 JIMFF 초청공연</div><div class="kind">페스티벌</div></div>
+        </div>
+        <p class="note">이 외 다수 지역축제 및 기업 행사 초청공연 등</p>
+        <div class="morewrap"><button type="button" id="more">더보기 +</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="shead rv"><h2>공연 문의</h2><em>CONTACT</em></div>
+    <div class="cgrid">
+      <div class="rv">
+        <p style="margin-top:0;color:#DCD4E6;max-width:40ch">행사 날짜와 장소, 무대 크기만 알려주시면 구성과 견적을 함께 제안드립니다. 보통 1~2일 안에 답장합니다.</p>
+        <div class="ccard"><span>이메일</span><a href="mailto:climaxcrew08@gmail.com">climaxcrew08@gmail.com</a></div>
+        <div class="ccard"><span>전화</span><a href="tel:01044326127">010-4432-6127</a></div>
+      </div>
+
+      <form class="rv" id="form" novalidate>
+        <div class="f2">
+          <div><label for="n">담당자 이름</label><input id="n" name="name" required></div>
+          <div><label for="p">연락처</label><input id="p" name="phone" required></div>
+        </div>
+        <div class="f2">
+          <div><label for="t">행사 종류</label>
+            <select id="t" name="type">
+              <option>축제 게스트쇼</option><option>시상식·기업 행사</option>
+              <option>개막·오프닝 퍼포먼스</option><option>워크숍·강습</option><option>기타</option>
+            </select></div>
+          <div><label for="d">행사 일시</label><input id="d" name="date" type="date"></div>
+        </div>
+        <div class="f2">
+          <div><label for="pl">행사 장소</label><input id="pl" name="place" placeholder="예: 원주 따뚜공연장"></div>
+          <div><label for="b">예산 범위 (선택)</label><input id="b" name="budget" placeholder="미정도 괜찮습니다"></div>
+        </div>
+        <div><label for="m">전하고 싶은 내용</label><textarea id="m" name="msg" placeholder="무대 크기, 공연 길이, 관객 연령대 등을 적어주시면 좋습니다."></textarea></div>
+        <button class="send" type="submit">문의 보내기</button>
+        <p class="note" id="fmsg">보내주신 내용은 climaxcrew08@gmail.com로 전달됩니다.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>클라이맥스 크루 · CLIMAX CREW</div>
+    <div>강원특별자치도 원주시 · SINCE 2008</div>
+    <div>climaxcrew08@gmail.com · 010-4432-6127</div>
+  </div>
+</footer>
+</div>
+
+<script>
+(function(){
+  var skip = document.getElementById('skip');
+  function endIntro(){
+    var i = document.getElementById('intro');
+    if(i) i.remove();
+    var p = document.getElementById('page');
+    if(p){ p.style.animation='none'; p.style.opacity=1; p.style.filter='none'; p.style.transform='none'; }
+  }
+  if(skip) skip.addEventListener('click', endIntro);
+  setTimeout(function(){ var i=document.getElementById('intro'); if(i) i.remove(); }, 6800);
+
+  // reveal
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.15});
+    document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // timeline fill
+  var tl = document.getElementById('tl'), fill = document.getElementById('tlfill');
+  function drawFill(){
+    if(!tl) return;
+    var r = tl.getBoundingClientRect();
+    var p = (window.innerHeight*0.7 - r.top) / r.height;
+    fill.style.height = Math.max(0, Math.min(1, p)) * (r.height - 20) + 'px';
+  }
+  window.addEventListener('scroll', drawFill, {passive:true});
+  window.addEventListener('resize', drawFill); drawFill();
+
+  // 연도 필터 + 더보기
+  var LIMIT = 8, expanded = false, fA = 0, fB = 9999;
+
+  function renderList(){
+    var rows = document.querySelectorAll('#plist .row');
+    var shown = 0, hidden = 0, i;
+    for(i = 0; i < rows.length; i++){
+      var r = rows[i], y = parseInt(r.getAttribute('data-y'), 10);
+      if(y < fA || y > fB){ r.classList.add('off'); continue; }
+      shown++;
+      if(!expanded && shown > LIMIT){ r.classList.add('off'); hidden++; }
+      else { r.classList.remove('off'); }
+    }
+    var wrap = document.querySelector('.morewrap');
+    var btn  = document.getElementById('more');
+    if(!wrap || !btn) return;
+    if(hidden > 0){ btn.textContent = '더보기 +'; wrap.classList.remove('off'); }
+    else if(expanded && shown > LIMIT){ btn.textContent = '접기 −'; wrap.classList.remove('off'); }
+    else { wrap.classList.add('off'); }
+  }
+
+  document.addEventListener('click', function(e){
+    var t = e.target;
+    var more = t.closest && t.closest('#more');
+    if(more){
+      e.preventDefault();
+      expanded = !expanded;
+      var rec0 = document.getElementById('record');
+      if(rec0) rec0.classList.toggle('open', expanded);
+      renderList();
+      if(!expanded){
+        var rec = document.getElementById('record');
+        if(rec) rec.scrollIntoView({block:'start'});
+      }
+      return;
+    }
+    var fb = t.closest && t.closest('#filters button');
+    if(fb){
+      var all = document.querySelectorAll('#filters button');
+      for(var i=0;i<all.length;i++){ all[i].setAttribute('aria-pressed', all[i]===fb ? 'true' : 'false'); }
+      fA = parseInt(fb.getAttribute('data-a'),10);
+      fB = parseInt(fb.getAttribute('data-b'),10);
+      expanded = false;
+      var rec1 = document.getElementById('record');
+      if(rec1) rec1.classList.remove('open');
+      renderList();
+    }
+  });
+  renderList();
+
+  // 모바일 메뉴
+  var navBtn = document.getElementById('navtoggle'), navEl = document.getElementById('nav');
+  if(navBtn && navEl){
+    navBtn.addEventListener('click', function(){
+      var open = navEl.classList.toggle('open');
+      navBtn.setAttribute('aria-expanded', open);
+      navBtn.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+    });
+    navEl.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        navEl.classList.remove('open');
+        navBtn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  // 프로그램 카드 배경 영상: 화면에 보일 때만 재생
+  var bgvs = document.querySelectorAll('.progs .bgv');
+  if(bgvs.length && 'IntersectionObserver' in window){
+    var vio = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        var v = e.target;
+        if(e.isIntersecting){ v.play().catch(function(){}); }
+        else { v.pause(); }
+      });
+    },{threshold:.25});
+    bgvs.forEach(function(v){ vio.observe(v); });
+  } else {
+    bgvs.forEach(function(v){ v.setAttribute('autoplay',''); });
+  }
+
+  // 유튜브: 썸네일 먼저, 클릭하면 그때 재생
+  var players = document.querySelectorAll('[data-yt]');
+  players.forEach(function(el){
+    var id = el.getAttribute('data-yt');
+    if(!id) return;
+    if(el.classList.contains('vt')){
+      el.style.backgroundImage = 'url("https://img.youtube.com/vi/'+id+'/hqdefault.jpg")';
+    }
+    function play(){
+      el.innerHTML = '<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0" '+
+        'title="공연 영상" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>';
+    }
+    el.addEventListener('click', play);
+    el.addEventListener('keydown', function(e){
+      if(e.key==='Enter' || e.key===' '){ e.preventDefault(); play(); }
+    });
+  });
+
+  // form
+  var f = document.getElementById('form');
+  if(f) f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var d = new FormData(f);
+    if(!d.get('name') || !d.get('phone')){
+      document.getElementById('fmsg').textContent = '이름과 연락처를 입력해 주세요.';
+      return;
+    }
+    var body = ['이름: '+d.get('name'),'연락처: '+d.get('phone'),'행사 종류: '+d.get('type'),
+      '행사 일시: '+(d.get('date')||'미정'),'장소: '+(d.get('place')||'미정'),
+      '예산: '+(d.get('budget')||'미정'),'','내용:',d.get('msg')||''].join('\n');
+    location.href = 'mailto:climaxcrew08@gmail.com?subject=' +
+      encodeURIComponent('[공연 문의] '+d.get('name')) + '&body=' + encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
