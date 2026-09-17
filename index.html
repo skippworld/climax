@@ -289,6 +289,12 @@ section{padding:clamp(4.5rem,10vw,8rem) 0;position:relative}
   background-size:cover;background-position:center}
 .vmain .play{background:rgba(10,7,16,.42)}
 .vmain iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+/* 호버 미리보기: 마우스 이벤트를 가로채지 않아야 클릭이 살아난다 */
+.vmain iframe.preview{pointer-events:none}
+.vmain::after{content:"클릭하면 소리와 함께 재생됩니다";position:absolute;right:1rem;bottom:1rem;
+  z-index:2;font-size:.76rem;color:#D6CDE2;background:rgba(10,7,16,.6);backdrop-filter:blur(6px);
+  padding:.35rem .7rem;border-radius:99px;opacity:0;transition:opacity .3s;pointer-events:none}
+.vmain:hover::after{opacity:1}
 .vmain .play{position:absolute;inset:0;display:grid;place-items:center;gap:.9rem;align-content:center}
 .vmain .play i{width:76px;height:76px;border-radius:50%;background:var(--grad);display:grid;place-items:center}
 .vmain .play i::after{content:"";border-left:20px solid #fff;border-top:12px solid transparent;
@@ -825,6 +831,10 @@ footer .wrap{justify-content:center;text-align:center}
   }
 
   // 유튜브: 썸네일 먼저, 클릭하면 그때 재생
+  function ytFrame(id, opts, cls){
+    return '<iframe class="'+(cls||'')+'" src="https://www.youtube.com/embed/'+id+'?'+opts+'" '+
+      'title="공연 영상" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>';
+  }
   var players = document.querySelectorAll('[data-yt]');
   players.forEach(function(el){
     var id = el.getAttribute('data-yt');
@@ -832,14 +842,28 @@ footer .wrap{justify-content:center;text-align:center}
     if(el.classList.contains('vt')){
       el.style.backgroundImage = 'url("https://img.youtube.com/vi/'+id+'/hqdefault.jpg")';
     }
-    function play(){
-      el.innerHTML = '<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0" '+
-        'title="공연 영상" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>';
+    var original = el.innerHTML, locked = false;
+
+    function playFull(){
+      locked = true;
+      el.innerHTML = ytFrame(id, 'autoplay=1&rel=0');
     }
-    el.addEventListener('click', play);
+    el.addEventListener('click', playFull);
     el.addEventListener('keydown', function(e){
-      if(e.key==='Enter' || e.key===' '){ e.preventDefault(); play(); }
+      if(e.key==='Enter' || e.key===' '){ e.preventDefault(); playFull(); }
     });
+
+    // 대표 영상: 마우스를 올리면 소리 없이 미리보기
+    if(el.classList.contains('vmain') && window.matchMedia('(hover:hover)').matches){
+      el.addEventListener('mouseenter', function(){
+        if(locked) return;
+        el.innerHTML = ytFrame(id, 'autoplay=1&mute=1&controls=0&rel=0&playsinline=1&modestbranding=1', 'preview');
+      });
+      el.addEventListener('mouseleave', function(){
+        if(locked) return;
+        el.innerHTML = original;
+      });
+    }
   });
 
   // form
